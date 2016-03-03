@@ -28,7 +28,7 @@ Add mwcRouter behavior.
            
            params:{},
 
-           queryParams:{main-view":"home"}
+           queryParams:{"main-view":"home"}
           }
         }
         },
