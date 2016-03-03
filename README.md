@@ -32,7 +32,7 @@ Add mwcMixin behavior.
           }
         }
         },
-        behaviors:[mwcRouter],
+        behaviors:[mwcRouter]
       })
 ```
 
