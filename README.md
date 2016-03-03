@@ -43,6 +43,7 @@ Add mwcRouter behavior.
 
 ```js
 //Router
+// Using mwc:layout is optional. Not a dependency
 FlowRouter.route("/post/:_id", {
     name: 'post-view',
     action: function(params, queryParams) {
@@ -53,7 +54,7 @@ FlowRouter.route("/post/:_id", {
 });
 
 // Inside post-view element
-// Using mwc:layout is optional. Not a dependency
+
 
 Polymer({
     is: "post-view",
