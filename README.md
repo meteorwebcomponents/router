@@ -1,7 +1,7 @@
 # Router Mixin.
 
 
-## What is mwc Router mixin?
+## What is mwc Router?
 
 mwcRouter is a reactive meteor routing solution for polymer elements. Objective is to sync the reactive flowrouter params and queryparams from inside the polymer elements
 
@@ -17,7 +17,7 @@ Add `mwc:router` package to your Meteor App
 ```sh
     $ meteor add mwc:router
 ```
-Add mwcMixin behavior.
+Add mwcRouter behavior.
 
 ```js
      Polymer({
