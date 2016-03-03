@@ -20,19 +20,23 @@ Add `mwc:router` package to your Meteor App
 Add mwcRouter behavior.
 
 ```js
-     Polymer({
-        is: "custom-elements",
-        // you can leave properties field empty if you dont want to set intial values.
-        properties: {
-          mwcRoute:{
-           route:"custom-route",
-           params:{p1:"p1value"},
-           queryParams:{qp1:"qp1value"}
-          }
+Polymer({
+    is: "custom-elements",
+    // you can leave properties field empty if you dont want to set intial values.
+    properties: {
+        mwcRoute: {
+            route: "custom-route",
+            params: {
+                p1: "p1value"
+            },
+            queryParams: {
+                qp1: "qp1value"
+            }
         }
-        },
-        behaviors:[mwcRouter] //important
-      })
+    }
+},
+behaviors: [mwcRouter] //important
+})
 ```
 
 `this.mwcRoute` contains route (name of the current route), params and queryparams which are reactive. Use it as
@@ -57,16 +61,19 @@ FlowRouter.route("/post/:_id", {
 
 Polymer({
     is: "post-view",
-    behaviors:[mwcRouter], /***** IMPORTANT *****/
-    properties:{
-     mwcRoute:{
-           queryParams:{"view":"home"} // initializing queryParam view = "home"
-          }
+    behaviors: [mwcRouter],
+    /***** IMPORTANT *****/
+    properties: {
+        mwcRoute: {
+            queryParams: {
+                "view": "home"
+            } // initializing queryParam view = "home"
+        }
     },
-    changeView:function(){
-    this.$.mainView.selected = "edit"; // here we are changing the selected attribute of #mainView. Router will change accordingly.
+    changeView: function() {
+        this.$.mainView.selected = "edit"; // here we are changing the selected attribute of #mainView. Router will change accordingly.
     }
-   });
+});
 
 ```
 
@@ -75,25 +82,25 @@ post-view element
 ```html
 ....
 
-    <paper-tabs attr-for-selected="name" selected="{{mwcRoute.queryParams.view}}">
-      <paper-tab name="home">Home</paper-tab>
-      <paper-tab name="edit">Edit</paper-tab>
-    </paper-tabs>
-    
-     <iron-pages id="mainView" selected="{{mwcRoute.queryParams.view}}" attr-for-selected="name">
+<paper-tabs attr-for-selected="name" selected="{{mwcRoute.queryParams.view}}">
+    <paper-tab name="home">Home</paper-tab>
+    <paper-tab name="edit">Edit</paper-tab>
+</paper-tabs>
 
-        <post-item name="home">
-         [[mwcRoute.params._id]]
-        </post-item>
+<iron-pages id="mainView" selected="{{mwcRoute.queryParams.view}}" attr-for-selected="name">
 
-        <post-item name="edit">
-         [[mwcRoute.params._id]]
-        </post-item>
+    <post-item name="home">
+        [[mwcRoute.params._id]]
+    </post-item>
+
+    <post-item name="edit">
+        [[mwcRoute.params._id]]
+    </post-item>
 
 
-      </iron-pages>
+</iron-pages>
 
-      <paper-button on-click="changeView">Edit post</paper-button>
+<paper-button on-click="changeView">Edit post</paper-button>
 ....
 
 ```
