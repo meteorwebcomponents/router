@@ -106,6 +106,7 @@ Now go to the browser console and check FlowRouter.setQueryParams({"view":"home"
 
 ##Related Projects
 
+[mwc router demo](https://github.com/meteorwebcomponents/demo-router) - mwc:router demo
 
 [MWC Compiler](https://github.com/meteorwebcomponents/compiler) - Compiler for polymer/webcomponents in meteor.
 
@@ -113,7 +114,6 @@ Now go to the browser console and check FlowRouter.setQueryParams({"view":"home"
 
 [MWC Layout](https://github.com/meteorwebcomponents/layout) - polymer layout renderer
 
-[mwc flowrouter demo](https://github.com/meteorwebcomponents/demo-flowrouter) - mwc demo with flowrouter as the default router
 
 
 

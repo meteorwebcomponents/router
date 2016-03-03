@@ -10,7 +10,7 @@ ecmascript-runtime@0.2.6
 ejson@1.0.7
 kadira:flow-router@2.10.1
 meteor@1.1.10
-mwc:router@1.0.2
+mwc:router@1.0.3
 promise@0.5.1
 random@1.0.5
 reactive-dict@1.1.3
