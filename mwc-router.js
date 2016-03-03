@@ -17,6 +17,7 @@ mwcRouter = {
       var key = param.path.split('.').pop();
       var p = {};
       p[key] = param.value;
+      if(FlowRouter.getParam(key) != param.value)
       FlowRouter.setParams(p);
     }
   },
@@ -25,6 +26,7 @@ mwcRouter = {
       var key = param.path.split('.').pop();
       var p = {};
       p[key] = param.value;
+      if(FlowRouter.getQueryParam(key) != param.value)
       FlowRouter.setQueryParams(p);
 
     }

@@ -1,6 +1,6 @@
 Package.describe({
   name: 'mwc:router',
-  version: '1.0.2',
+  version: '1.0.3',
   summary: 'Reactive Routing For Meteor + Polymer using flowrouter',
   git: "https://github.com/meteorwebcomponents/router.git",
   documentation: "README.md"

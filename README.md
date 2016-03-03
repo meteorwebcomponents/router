@@ -98,6 +98,12 @@ post-view element
 Now go to the browser console and check FlowRouter.setQueryParams({"view":"home"});
 
 
+## Todo
+
+
+- [ ] URL string to property type change
+- [ ] Option to add preprocessing functions for set and get
+
 ##Related Projects
 
 
@@ -108,6 +114,7 @@ Now go to the browser console and check FlowRouter.setQueryParams({"view":"home"
 [MWC Layout](https://github.com/meteorwebcomponents/layout) - polymer layout renderer
 
 [mwc flowrouter demo](https://github.com/meteorwebcomponents/demo-flowrouter) - mwc demo with flowrouter as the default router
+
 
 
 
