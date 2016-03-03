@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'mwc:mixin',
+  name: 'mwc:router',
   version: '1.0.1',
   summary: 'Reactive Routing For Meteor + Polymer using flowrouter',
   git: "https://github.com/meteorwebcomponents/router.git",
@@ -11,7 +11,7 @@ Package.on_use(function(api) {
 
   api.addFiles("mwc-router.js", ["client"]);
   api.use('underscore@1.0.4',["client"]);
-  api.use('kadira:flow-router@2.10.1',["client"],{weak:"true"});
+  api.use('kadira:flow-router@2.10.1',["client"]);
   api.export("mwcRouter");
 });
 
