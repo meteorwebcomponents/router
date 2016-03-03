@@ -67,7 +67,7 @@ Polymer({
           }
     },
     changeView:function(){
-    this.mwcRoute.queryParams["view"] = "edit";
+    this.$.mainView.selected = "edit";
     }
    });
 
@@ -77,7 +77,13 @@ post-view element
 
 ```html
 ....
-     <iron-pages selected="{{mwcRoute.queryParams.view}}" attr-for-selected="name">
+
+    <paper-tabs attr-for-selected="name" selected="{{mwcRoute.queryParams.view}}" >
+      <paper-tab name="home">Home</paper-tab>
+      <paper-tab name="edit">Edit</paper-tab>
+    </paper-tabs>
+    
+     <iron-pages id="mainView" selected="{{mwcRoute.queryParams.view}}" attr-for-selected="name">
 
         <post-item name="home">
          [[mwcRoute.params._id]]
