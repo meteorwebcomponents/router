@@ -107,8 +107,8 @@ Now go to the browser console and check FlowRouter.setQueryParams({"view":"home"
 ## Todo
 
 
-- [ ] URL string to property type change
-- [ ] Option to add preprocessing functions for set and get
+- [ ] Support data types other than string also. ie polymer property A(datatype : Object) -> param string
+- [ ] Option to add preprocessing functions for set and get. support for computations
 
 ##Related Projects
 
