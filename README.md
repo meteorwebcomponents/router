@@ -22,17 +22,16 @@ Add mwcRouter behavior.
 ```js
      Polymer({
         is: "custom-elements",
+        // you can leave properties field empty if you dont want to set intial values.
         properties: {
           mwcRoute:{
-           route:"post-view",
-           
-           params:{},
-
-           queryParams:{"main-view":"home"}
+           route:"custom-route",
+           params:{p1:"p1value"},
+           queryParams:{qp1:"qp1value"}
           }
         }
         },
-        behaviors:[mwcRouter]
+        behaviors:[mwcRouter] //important
       })
 ```
 
@@ -43,7 +42,7 @@ Add mwcRouter behavior.
 
 ```js
 //Router
-// Using mwc:layout is optional. Not a dependency
+// Using mwc:layout is optional. Not a dependency. 
 FlowRouter.route("/post/:_id", {
     name: 'post-view',
     action: function(params, queryParams) {
@@ -61,13 +60,11 @@ Polymer({
     behaviors:[mwcRouter], /***** IMPORTANT *****/
     properties:{
      mwcRoute:{
-           route:"post-view",
-
-           queryParams:{"view":"home"}
+           queryParams:{"view":"home"} // initializing queryParam view = "home"
           }
     },
     changeView:function(){
-    this.$.mainView.selected = "edit";
+    this.$.mainView.selected = "edit"; // here we are changing the selected attribute of #mainView. Router will change accordingly.
     }
    });
 
@@ -78,7 +75,7 @@ post-view element
 ```html
 ....
 
-    <paper-tabs attr-for-selected="name" selected="{{mwcRoute.queryParams.view}}" >
+    <paper-tabs attr-for-selected="name" selected="{{mwcRoute.queryParams.view}}">
       <paper-tab name="home">Home</paper-tab>
       <paper-tab name="edit">Edit</paper-tab>
     </paper-tabs>
