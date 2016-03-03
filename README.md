@@ -33,9 +33,8 @@ Polymer({
                 qp1: "qp1value"
             }
         }
-    }
-},
-behaviors: [mwcRouter] //important
+    },
+    behaviors: [mwcRouter] //important
 })
 ```
 
