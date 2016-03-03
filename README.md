@@ -53,6 +53,7 @@ FlowRouter.route("/post/:_id", {
 });
 
 // Inside post-view element
+// Using mwc:layout is optional. Not a dependency
 
 Polymer({
     is: "post-view",
@@ -60,8 +61,6 @@ Polymer({
     properties:{
      mwcRoute:{
            route:"post-view",
-           
-           params:{},
 
            queryParams:{"view":"home"}
           }
