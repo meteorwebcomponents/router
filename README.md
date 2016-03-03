@@ -70,7 +70,8 @@ Polymer({
         }
     },
     changeView: function() {
-        this.$.mainView.selected = "edit"; // here we are changing the selected attribute of #mainView. Router will change accordingly.
+        this.$.mainView.selected = "edit"; 
+        // here we are changing the selected attribute of #mainView. Router will change accordingly.
     }
 });
 
