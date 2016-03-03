@@ -24,12 +24,13 @@ Add mwcMixin behavior.
         is: "custom-elements",
         properties: {
           mwcRoute:{
-           route:"landing",
+           route:"post-view",
            
            params:{},
 
            queryParams:{main-view":"home"}
           }
+        }
         },
         behaviors:[mwcRouter],
       })
@@ -58,7 +59,7 @@ Polymer({
     behaviors:[mwcRouter], /***** IMPORTANT *****/
     properties:{
      mwcRoute:{
-           route:"landing",
+           route:"post-view",
            
            params:{},
 
@@ -97,16 +98,12 @@ post-view element
 Now go to the browser console and check FlowRouter.setQueryParams({"view":"home"});
 
 
-
-
-
-
-
-
 ##Related Projects
 
 
 [MWC Compiler](https://github.com/meteorwebcomponents/compiler) - Compiler for polymer/webcomponents in meteor.
+
+[MWC Mixin](https://github.com/meteorwebcomponents/mixin) - Mixin for polymer/webcomponents in meteor.
 
 [MWC Layout](https://github.com/meteorwebcomponents/layout) - polymer layout renderer
 
