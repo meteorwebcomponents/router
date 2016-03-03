@@ -80,11 +80,11 @@ post-view element
      <iron-pages selected="{{mwcRoute.queryParams.view}}" attr-for-selected="name">
 
         <post-item name="home">
-          contents
+         [[mwcRoute.params._id]]
         </post-item>
 
         <post-item name="edit">
-         Contents
+         [[mwcRoute.params._id]]
         </post-item>
 
 
