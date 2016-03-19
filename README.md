@@ -7,6 +7,7 @@ mwcRouter is a reactive meteor routing solution for polymer elements. Objective 
 
 
 
+
 ## How to use it ?
 
 
@@ -25,10 +26,13 @@ Polymer({
     // you can leave properties field empty if you dont want to set intial values.
     properties: {
         mwcRoute: {
-            route: "custom-route",
+            //name datatypes - string
+            name: "custom-route",
+            //params datatypes - string
             params: {
                 p1: "p1value"
             },
+            //queryParams datatypes - string/object
             queryParams: {
                 qp1: "qp1value"
             }
@@ -38,7 +42,7 @@ Polymer({
 })
 ```
 
-`this.mwcRoute` contains route (name of the current route), params and queryparams which are reactive. Use it as
+`this.mwcRoute` contains name (name of the current route), params and queryparams which are reactive. Use it as
 `{{mwcRouter.queryParams.paramName}}`
 
 ### With FlowRouter and `mwc:layout`
@@ -108,10 +112,11 @@ post-view element
 Now go to the browser console and check FlowRouter.setQueryParams({"view":"home"});
 
 
+
 ## Todo
 
 
-- [ ] Support data types other than string also. ie polymer property A(datatype : Object) -> param string
+- [x] Support data types other than string also. ie polymer property A(datatype : Object) -> param string
 - [ ] Option to add preprocessing functions for set and get. support for computations
 
 ##Related Projects
@@ -123,12 +128,5 @@ Now go to the browser console and check FlowRouter.setQueryParams({"view":"home"
 [MWC Mixin](https://github.com/meteorwebcomponents/mixin) - Mixin for polymer/webcomponents in meteor.
 
 [MWC Layout](https://github.com/meteorwebcomponents/layout) - polymer layout renderer
-
-
-
-
-
-
-
 
 

@@ -7,12 +7,13 @@ mwcRouter = {
   },
 
   observers:[
-    "__mwc_setRouteName(mwcRoute.route)",
+    "__mwc_setRouteName(mwcRoute.name)",
     "__mwc_setParams(mwcRoute.params.*)",
     "__mwc_setQueryParams(mwcRoute.queryParams.*)"
   ],
 
   __mwc_setParams:function(param){
+    //avoids initializing of mwcRoute.params and mwcRoute.queryParams
     if((param.path.match(/\./g) || []).length == 2){
       var key = param.path.split('.').pop();
       var p = {};
@@ -22,17 +23,18 @@ mwcRouter = {
     }
   },
   __mwc_setQueryParams:function(param){
-    if((param.path.match(/\./g) || []).length == 2){
-      var key = param.path.split('.').pop();
-      var p = {};
-      p[key] = param.value;
-      if(FlowRouter.getQueryParam(key) != param.value)
+    //queryParams can be objects
+    //avoids initializing of mwcRoute.params and mwcRoute.queryParams
+    if((param.path.match(/\./g) || []).length >= 2){
+      //param.path is like mwcRoute,queryParams.qp1.a.b.c where qp1 is the queryparam name
+      var key = param.path.split('.')[2];
+      var p = _.pick(this.mwcRoute.queryParams,key);
+      if(!_.isEqual(FlowRouter.getQueryParam(key),p[key]))
         FlowRouter.setQueryParams(p);
-
     }
   },
   __mwc_routerGo:function(){
-    var rName = this.mwcRoute.route,
+    var rName = this.mwcRoute.name,
       p = this.mwcRoute.params,
       q = this.mwcRoute.queryParams;
     if(rName !=undefined)
@@ -54,7 +56,7 @@ mwcRouter = {
     var q = _.extend(current.queryParams,mwcR.queryParams);
 
     self.set('mwcRoute',{
-      route:current.route.name,
+      name:current.route.name,
       params:p,
       queryParams:q
     });
@@ -82,7 +84,7 @@ function mwcRouteUpdate(element) {
   var p = _.extend(element.mwcRoute.params,current.params);
   var q = _.extend(element.mwcRoute.queryParams,current.queryParams);
   var rName = FlowRouter.getRouteName();
-  var mwcRoute = {route:rName,params:{},queryParams:{}};
+  var mwcRoute = {name:rName,params:{},queryParams:{}};
   //to rerun on every param/queryParam change, since flowrouter current is not reactive.
   _.each(p,function(v,k){
 
@@ -102,3 +104,4 @@ function mwcRouteUpdate(element) {
     element.__mwc_setRoute(mwcRoute);
   });
 }
+
