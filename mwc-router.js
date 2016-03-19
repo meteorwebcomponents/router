@@ -18,7 +18,7 @@ mwcRouter = {
       var p = {};
       p[key] = param.value;
       if(FlowRouter.getParam(key) != param.value)
-      FlowRouter.setParams(p);
+        FlowRouter.setParams(p);
     }
   },
   __mwc_setQueryParams:function(param){
@@ -27,7 +27,7 @@ mwcRouter = {
       var p = {};
       p[key] = param.value;
       if(FlowRouter.getQueryParam(key) != param.value)
-      FlowRouter.setQueryParams(p);
+        FlowRouter.setQueryParams(p);
 
     }
   },
@@ -63,7 +63,7 @@ mwcRouter = {
     Tracker.autorun(function(computation) {
       self.__mwc_RouteComp = computation;
       self.__mwc_RouteDep.depend();
-      mwcRouteUpdate(self,current);
+      mwcRouteUpdate(self);
     });
 
 
@@ -77,12 +77,13 @@ mwcRouter = {
   }
 }
 
-function mwcRouteUpdate(element,current) {
+function mwcRouteUpdate(element) {
+  var current = FlowRouter.current();
   var p = _.extend(element.mwcRoute.params,current.params);
   var q = _.extend(element.mwcRoute.queryParams,current.queryParams);
   var rName = FlowRouter.getRouteName();
   var mwcRoute = {route:rName,params:{},queryParams:{}};
-
+  //to rerun on every param/queryParam change, since flowrouter current is not reactive.
   _.each(p,function(v,k){
 
     mwcRoute.params[k] = FlowRouter.getParam(k);
