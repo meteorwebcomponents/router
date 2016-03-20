@@ -5,20 +5,26 @@
 
 mwcRouter is a reactive meteor routing solution for polymer elements. Objective is to sync the reactive flowrouter params and queryparams from inside the polymer elements
 
+## Installation
 
+### Method 1 - Meteor Package
+Add `mwc:router` package to your Meteor App. 
+
+```sh
+$ meteor add mwc:router
+```
+### Method 2 - Using bower
+
+```sh
+bower install mwc-router --save
+```
+import mwc-router.html file.
 
 
 ## How to use it ?
 
+Add `mwcRouter` behavior to your component behaviors. ie. `behaviors:[mwcRouter]`
 
-
-Add `mwc:router` package to your Meteor App 
-
-
-```sh
-    $ meteor add mwc:router
-```
-Add mwcRouter behavior.
 
 ```js
 Polymer({
