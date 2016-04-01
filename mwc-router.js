@@ -52,6 +52,7 @@ mwcRouter = {
 
     var current = FlowRouter.current();
     var mwcR = self.mwcRoute || {};
+    var routeName = current.route ? current.route.name : "";
     var p = _.extend(current.params,mwcR.params);
     var q = _.extend(current.queryParams,mwcR.queryParams);
 

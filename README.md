@@ -8,6 +8,7 @@ mwcRouter is a reactive meteor routing solution for polymer elements. Objective 
 
 
 
+
 ## How to use it ?
 
 
@@ -113,6 +114,7 @@ Now go to the browser console and check FlowRouter.setQueryParams({"view":"home"
 
 
 
+
 ## Todo
 
 
@@ -123,10 +125,10 @@ Now go to the browser console and check FlowRouter.setQueryParams({"view":"home"
 
 [mwc router demo](https://github.com/meteorwebcomponents/demo-router) - mwc:router demo
 
-[MWC Compiler](https://github.com/meteorwebcomponents/compiler) - Compiler for polymer/webcomponents in meteor.
+[MWC synthesis](https://github.com/meteorwebcomponents/synthesis) - Synthesis is meteor + polymer.
 
 [MWC Mixin](https://github.com/meteorwebcomponents/mixin) - Mixin for polymer/webcomponents in meteor.
 
-[MWC Layout](https://github.com/meteorwebcomponents/layout) - polymer layout renderer
+
 
 
