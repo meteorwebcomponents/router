@@ -124,7 +124,7 @@ Now go to the browser console and check FlowRouter.setQueryParams({"view":"home"
 
 ##Related Projects
 
-[mwc router demo](https://github.com/meteorwebcomponents/demo-router) - mwc:router demo
+[mwc router demo](https://github.com/aruntk/kickstart-meteor-polymer) - kickstart meteor polymer
 
 [MWC synthesis](https://github.com/meteorwebcomponents/synthesis) - Synthesis is meteor + polymer.
 
