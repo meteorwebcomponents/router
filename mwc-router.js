@@ -52,7 +52,6 @@ mwcRouter = {
 
     var current = FlowRouter.current();
     var mwcR = self.mwcRoute || {};
-    var routeName = current.route ? current.route.name : "";
     var p = _.extend(current.params,mwcR.params);
     var q = _.extend(current.queryParams,mwcR.queryParams);
 
@@ -81,19 +80,14 @@ mwcRouter = {
 }
 
 function mwcRouteUpdate(element) {
-  var current = FlowRouter.current();
-  var p = _.extend(element.mwcRoute.params,current.params);
-  var q = _.extend(element.mwcRoute.queryParams,current.queryParams);
-  var rName = FlowRouter.getRouteName();
-  var mwcRoute = {name:rName,params:{},queryParams:{}};
-  //to rerun on every param/queryParam change, since flowrouter current is not reactive.
-  _.each(p,function(v,k){
 
-    mwcRoute.params[k] = FlowRouter.getParam(k);
-  });
-  _.each(q,function(v,k){
-    mwcRoute.queryParams[k] = FlowRouter.getQueryParam(k);
-  });
+  //to rerun on every param/queryParam change, since flowrouter current is not reactive.
+  FlowRouter.watchPathChange();
+  var current = FlowRouter.current();
+  var p = current.params;
+  var q = current.queryParams;
+  var rName = current.route.name;
+  var mwcRoute = {name:rName,params:p,queryParams:q};
 
   if (element.__mwc_RouteFirstRun) {
     element.__mwc_RouteFirstRun = false;
